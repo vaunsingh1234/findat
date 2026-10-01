@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-cream: #FBF3E4;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FFF9EE;
+  --color-terracotta: #D9633B;
+  --color-terracotta-hover: #C2542E;
+  --color-terracotta-light: #FCECE6;
+  --color-mustard: #E9A820;
+  --color-mustard-hover: #D49615;
+  --color-mustard-light: #FDF5E3;
+  --color-sage: #8FAF7E;
+  --color-sage-light: #EEF5EB;
+  --color-olive: #4F6B3A;
+  --color-olive-dark: #395029;
+  --color-olive-light: #E7EFE3;
+  --color-clay: #E8C9A0;
+  --color-clay-light: #FAF4EC;
+  --color-sky-teal: #5FA8A0;
+  --color-sky-teal-light: #EBF5F4;
+  --color-ink: #2B2418;
+  --color-muted: #7A6B55;
+  --color-border-warm: #E8DAC6;
+  --color-border-dark: #2B2418;
+  --color-gain: #4F6B3A;
+  --color-gain-bg: #EEF5EB;
+  --color-loss: #D9633B;
+  --color-loss-bg: #FCECE6;
+
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@property --progress {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+:root {
+  --bg-cream: #FBF3E4;
+  --surface-tint: #FFF9EE;
+  --ink: #2B2418;
+  --muted: #7A6B55;
+  --terracotta: #D9633B;
+  --mustard: #E9A820;
+  --sage: #8FAF7E;
+  --olive: #4F6B3A;
+  --clay: #E8C9A0;
+  --sky-teal: #5FA8A0;
+  --border-warm: #E8DAC6;
+  --border-strong: #2B2418;
+}
+
+/* Base Editorial Typography & Styles */
+body {
+  background-color: #FBF3E4;
+  color: #2B2418;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.tabular-nums {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* StringTune Layout Container & Attribute-driven Hooks */
+.scroll-container {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+/* Glare & Micro-interaction button styles inspired by StringTune Skill Hub */
+.button-editorial {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 9999px;
+  padding: 0.625rem 1.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-editorial:hover {
+  transform: translateY(-1px);
+}
+
+.button-editorial:active {
+  transform: translateY(0);
+}
+
+.button-editorial-primary {
+  background-color: var(--terracotta);
+  color: #FBF3E4;
+  border-color: var(--terracotta);
+}
+.button-editorial-primary:hover {
+  background-color: #C2542E;
+  border-color: #C2542E;
+}
+
+.button-editorial-secondary {
+  background-color: #FFF9EE;
+  color: var(--ink);
+  border-color: var(--border-warm);
+}
+.button-editorial-secondary:hover {
+  background-color: #FFFFFF;
+  border-color: var(--ink);
+}
+
+.button-editorial-olive {
+  background-color: var(--olive);
+  color: #FBF3E4;
+  border-color: var(--olive);
+}
+.button-editorial-olive:hover {
+  background-color: #395029;
+}
+
+/* Confident Card Blocks */
+.editorial-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-warm);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(43, 36, 24, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editorial-card-tint {
+  background-color: #FFF9EE;
+  border: 1px solid var(--border-warm);
+  border-radius: 0.75rem;
+}
+
+.editorial-card:hover {
+  border-color: rgba(43, 36, 24, 0.25);
+  box-shadow: 0 4px 12px rgba(43, 36, 24, 0.06);
+}
+
+/* Custom Scrollbar for Financial Tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF3E4;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8DAC6;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7A6B55;
+}
+
+/* Subtle Grid Guidelines background matching Skill Hub */
+.editorial-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(232, 218, 198, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 218, 198, 0.35) 1px, transparent 1px);
+}
